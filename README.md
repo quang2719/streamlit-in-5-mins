@@ -1,186 +1,186 @@
-# Streamlit trong 5 phút - Hướng dẫn từ cơ bản đến ứng dụng thực tế
+# Streamlit in 5 Minutes - From Basics to Real-world Applications
 
-## 📝 Giới thiệu
+## 📝 Introduction
 
-Đây là một dự án hướng dẫn học Streamlit từ cơ bản đến nâng cao trong vòng 5 phút. Dự án bao gồm 3 ứng dụng web được xây dựng bằng Streamlit, từ việc làm quen với các thành phần cơ bản đến những ứng dụng thực tế có tính năng phân tích dữ liệu và xác thực người dùng.
+This is a comprehensive Streamlit tutorial project that takes you from beginner to advanced level in just 5 minutes. The project includes 3 web applications built with Streamlit, ranging from basic component familiarization to real-world applications with data analysis and user authentication features.
 
-**Điểm đặc biệt**: Tất cả các ứng dụng được tạo ra từ một file Jupyter Notebook duy nhất (`main.ipynb`) sử dụng lệnh `%%writefile` - một cách tiếp cận rất hay để phát triển và tổ chức code!
+**Special Feature**: All applications are generated from a single Jupyter Notebook file (`main.ipynb`) using the `%%writefile` command - a brilliant approach for development and code organization!
 
-## 🗂️ Cấu trúc dự án
+## 🗂️ Project Structure
 
 ```
 streamlit-in-5-mins/
 ├── README.md
 ├── basic_web_deploy_streamlib/
-│   ├── main.ipynb          # File chính - Jupyter Notebook
-│   ├── app.py              # App 1: Tutorial cơ bản
-│   ├── app2.py             # App 2: Phân tích điểm học sinh  
-│   ├── app3.py             # App 3: Calculator với authentication
-│   ├── assets/             # Thư mục chứa hình ảnh và media
-│   └── data/               # Thư mục chứa dữ liệu mẫu
+│   ├── main.ipynb          # Main file - Jupyter Notebook
+│   ├── app.py              # App 1: Basic tutorial
+│   ├── app2.py             # App 2: Student score analysis  
+│   ├── app3.py             # App 3: Calculator with authentication
+│   ├── assets/             # Images and media folder
+│   └── data/               # Sample data folder
 ```
 
-## 🎯 Mục tiêu chính của `main.ipynb`
+## 🎯 Main Objectives of `main.ipynb`
 
-File `main.ipynb` là trái tim của dự án này, được thiết kế với 3 mục đích chính:
+The `main.ipynb` file is the heart of this project, designed with 3 main purposes:
 
-### 1️⃣ **Tutorial cơ bản Streamlit** 
-Mô tả đầy đủ các hàm cơ bản của Streamlit với comment chi tiết. Bạn hãy thử từng đoạn code với chức năng khác nhau và sẽ thấy sự thay đổi từng bước của trang web.
+### 1️⃣ **Basic Streamlit Tutorial** 
+Comprehensive description of Streamlit's basic functions with detailed comments. Try each code segment with different functionalities and observe the step-by-step changes in the web page.
 
-### 2️⃣ **Ứng dụng phân tích dữ liệu thực tế**
-Một trang web đơn giản để phân tích và visualize phân bố điểm của học sinh.
+### 2️⃣ **Real-world Data Analysis Application**
+A simple web application for analyzing and visualizing student score distributions.
 
-### 3️⃣ **Ứng dụng với xác thực người dùng** 
-Một trang web có user authentication để phân quyền người dùng và chức năng tính giai thừa đơn giản.
+### 3️⃣ **Application with User Authentication** 
+A web application with user authentication for user authorization and a simple factorial calculation feature.
 
 ---
 
-## 🚀 I. Tutorial cơ bản Streamlit (app.py)
+## 🚀 I. Basic Streamlit Tutorial (app.py)
 
-### Mô tả
-App đầu tiên này giới thiệu tất cả các thành phần cơ bản của Streamlit:
-- Hiển thị text (title, header, subheader, caption)
-- Markdown và LaTeX
-- Hiển thị media (hình ảnh, âm thanh, video)
-- Các widget input (checkbox, radio, selectbox, slider)
-- Biểu đồ cơ bản
+### Description
+This first app introduces all the basic components of Streamlit:
+- Text display (title, header, subheader, caption)
+- Markdown and LaTeX
+- Media display (images, audio, video)
+- Input widgets (checkbox, radio, selectbox, slider)
+- Basic charts
 
-### Chạy ứng dụng
+### Run the application
 ```bash
 streamlit run app.py
 ```
 
-### Tính năng chính
-- 📝 Hiển thị text với nhiều định dạng khác nhau
-- 🎨 Hỗ trợ Markdown và công thức toán học
-- 🖼️ Hiển thị media (ảnh, âm thanh, video)
-- 🎛️ Các widget tương tác (checkbox, radio, slider, input)
-- 📊 Biểu đồ dữ liệu cơ bản
+### Key Features
+- 📝 Text display with various formats
+- 🎨 Markdown and mathematical formula support
+- 🖼️ Media display (images, audio, video)
+- 🎛️ Interactive widgets (checkbox, radio, slider, input)
+- 📊 Basic data charts
 
 ---
 
-## 📊 II. Phân tích điểm học sinh (app2.py)
+## 📊 II. Student Score Analysis (app2.py)
 
 ![Pipeline](./basic_web_deploy_streamlib/assets/pipeline.png)
 
-### Mô tả
-Ứng dụng web để phân tích và visualize phân bố điểm số của học sinh từ file Excel.
+### Description
+A web application for analyzing and visualizing student score distributions from Excel files.
 
 ![Demo](./basic_web_deploy_streamlib/assets/image1.png)
 
-### Chạy ứng dụng
+### Run the application
 ```bash
 streamlit run app2.py
 ```
 
-### Tính năng
-- 📁 Upload file Excel chứa dữ liệu điểm
-- 📈 Tính điểm trung bình
-- 📊 Phân tích phân bố điểm theo các khoảng:
-  - ≥ 80: Giỏi
-  - 60-79: Khá  
-  - 40-59: Trung bình
-  - < 40: Yếu
-- 🥧 Hiển thị biểu đồ tròn phân bố điểm
+### Features
+- 📁 Upload Excel files containing score data
+- 📈 Calculate average scores
+- 📊 Analyze score distribution by ranges:
+  - ≥ 80: Excellent
+  - 60-79: Good  
+  - 40-59: Average
+  - < 40: Poor
+- 🥧 Display pie chart for score distribution
 
-### Dữ liệu mẫu
-Sử dụng file `data/diem_hoc_sinh.xlsx` để test ứng dụng.
+### Sample Data
+Use the file `data/diem_hoc_sinh.xlsx` to test the application.
 
 ---
 
-## 🔐 III. Calculator với Authentication (app3.py)
+## 🔐 III. Calculator with Authentication (app3.py)
 
 ![Demo Calculator](./basic_web_deploy_streamlib/assets/image2.png)
 
-### Mô tả
-Ứng dụng tính giai thừa với hệ thống xác thực người dùng đơn giản.
+### Description
+A factorial calculator application with simple user authentication system.
 
 ![Calculator Interface](./basic_web_deploy_streamlib/assets/factorial.png)
 
-### Chạy ứng dụng
+### Run the application
 ```bash
 streamlit run app3.py
 ```
 
-### Tính năng
-- 🔐 **Hệ thống đăng nhập**: Chỉ user có quyền mới được truy cập
-- 🧮 **Tính giai thừa**: Tính giai thừa của số từ 0-50
-- 💾 **Cache**: Sử dụng `@st.cache_data` để tối ưu performance  
-- 👤 **Session State**: Quản lý trạng thái đăng nhập
-- 🚪 **Đăng xuất**: Tính năng logout an toàn
+### Features
+- 🔐 **Login System**: Only authorized users can access
+- 🧮 **Factorial Calculator**: Calculate factorial of numbers from 0-50
+- 💾 **Caching**: Uses `@st.cache_data` for performance optimization  
+- 👤 **Session State**: Manages login state
+- 🚪 **Logout**: Safe logout functionality
 
-### Tài khoản test
-- Username: `admin` hoặc `manager`
-- Không cần password (demo đơn giản)
+### Test Accounts
+- Username: `admin` or `manager`
+- No password required (simple demo)
 
 ---
 
-## 🛠️ Cài đặt và chạy
+## 🛠️ Installation and Setup
 
-### Yêu cầu hệ thống
+### System Requirements
 - Python 3.7+
 - Streamlit
 - Pandas
 - Matplotlib
 - Pillow
 
-### Cài đặt
+### Installation
 ```bash
 # Clone repository
 git clone <repository-url>
 cd streamlit-in-5-mins
 
-# Cài đặt dependencies
+# Install dependencies
 pip install streamlit pandas matplotlib pillow openpyxl
 
-# Chạy Jupyter Notebook (tùy chọn)
+# Run Jupyter Notebook (optional)
 jupyter notebook basic_web_deploy_streamlib/main.ipynb
 ```
 
-### Chạy từng ứng dụng
+### Run Individual Applications
 ```bash
 cd basic_web_deploy_streamlib
 
-# App 1: Tutorial cơ bản
+# App 1: Basic tutorial
 streamlit run app.py
 
-# App 2: Phân tích điểm
+# App 2: Score analysis
 streamlit run app2.py  
 
-# App 3: Calculator với auth
+# App 3: Calculator with auth
 streamlit run app3.py
 ```
 
-## 💡 Điểm đặc biệt - Sử dụng `%%writefile`
+## 💡 Special Feature - Using `%%writefile`
 
-Một điểm hay trong dự án này là việc sử dụng lệnh `%%writefile` trong Jupyter Notebook để tạo ra các file Python:
+A brilliant aspect of this project is the use of the `%%writefile` command in Jupyter Notebook to create Python files:
 
 ```python
 %%writefile app.py
 import streamlit as st
-# Nội dung ứng dụng...
+# Application content...
 ```
 
-Cách tiếp cận này giúp:
-- ✅ Tổ chức code một cách khoa học
-- ✅ Dễ dàng thực nghiệm và chỉnh sửa
-- ✅ Có thể chạy và test ngay trong notebook
-- ✅ Tạo ra các file độc lập cho deployment
+This approach provides:
+- ✅ Scientific code organization
+- ✅ Easy experimentation and editing
+- ✅ Run and test directly in notebook
+- ✅ Create independent files for deployment
 
-## 🎓 Kết luận
+## 🎓 Conclusion
 
-Dự án này cung cấp một lộ trình học tập Streamlit hoàn chỉnh từ cơ bản đến nâng cao. Bạn sẽ học được:
+This project provides a complete Streamlit learning path from basic to advanced. You will learn:
 
-1. **Các thành phần cơ bản** của Streamlit UI
-2. **Xây dựng ứng dụng thực tế** với data processing và visualization  
-3. **Quản lý state và authentication** cho ứng dụng web
+1. **Basic components** of Streamlit UI
+2. **Building real applications** with data processing and visualization  
+3. **State management and authentication** for web applications
 
-Hãy thử từng ứng dụng và cảm nhận sự mạnh mẽ của Streamlit trong việc tạo ra web apps chỉ bằng Python! 🐍✨
+Try each application and experience the power of Streamlit in creating web apps with just Python! 🐍✨
 
 ---
 
-## 📞 Liên hệ
+## 📞 Contact
 
-Nếu bạn có thắc mắc hoặc muốn đóng góp cho dự án, hãy tạo issue hoặc pull request.
+If you have questions or want to contribute to the project, please create an issue or pull request.
 
 **Happy Coding!** 🚀
